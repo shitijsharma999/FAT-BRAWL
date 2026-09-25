@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #080a12;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+}
+
+.app-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: radial-gradient(circle at 50% 30%, #151b2d 0%, #080a12 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========================================================
+   TOP TITLE BAR
+======================================================== */
+.title-bar {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: rgba(18, 22, 34, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 12px 12px;
+  z-index: 100;
+}
+
+.title-branding {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-icon {
+  font-size: 20px;
+}
+
+.title-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #ffea79, #ffbe0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(255, 190, 11, 0.35));
+}
+
+.title-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #9aa8cf;
+}
+
+.title-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controller-badge {
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(56, 239, 125, 0.15);
+  border: 1px solid rgba(56, 239, 125, 0.5);
+  color: #38ef7d;
+  padding: 3px 9px;
+  border-radius: 20px;
+  animation: pulse-badge 2s infinite ease-in-out;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.97); }
+}
+
+.touch-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: #c7d2fe;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.touch-toggle-btn.active {
+  background: rgba(127, 147, 255, 0.25);
+  border-color: #7f93ff;
+  color: #ffffff;
+}
+
+.settings-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.settings-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ========================================================
+   GAME ARENA WRAPPER
+======================================================== */
+.game-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+}
+
+.phaser-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phaser-container canvas {
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(18, 22, 40, 0.6);
+  image-rendering: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ========================================================
+   BOTTOM CONTROLS BAR
+======================================================== */
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 16px 10px;
+  width: 100%;
+  max-width: 900px;
+  z-index: 100;
+}
+
+.control-capsule {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8b99bd;
+  font-weight: 500;
+}
+
+.pill-key {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #ffea79;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================================
+   RESPONSIVE SCALING
+======================================================== */
+@media (max-width: 768px) {
+  .title-bar {
+    padding: 6px 10px;
+  }
+  .title-text {
+    font-size: 16px;
+  }
+  .title-badge {
+    display: none;
+  }
+  .footer-bar {
+    display: none; /* Hide keyboard legend on small touch screens */
+  }
+}
+
+@media (max-height: 640px) {
+  .title-bar {
+    padding: 4px 10px;
+  }
+  .footer-bar {
+    display: none;
+  }
+}

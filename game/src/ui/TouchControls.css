@@ -1,0 +1,313 @@
+/* TouchControls.css — PSP Handheld Console Aesthetics */
+
+.psp-touch-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 150;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 16px 24px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.psp-touch-layer.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ========================================================
+   LEFT D-PAD CLUSTER
+======================================================== */
+.psp-dpad-cluster {
+  pointer-events: auto;
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin-bottom: 12px;
+  background: radial-gradient(circle, rgba(22, 26, 38, 0.72) 0%, rgba(12, 14, 22, 0.5) 75%, transparent 100%);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 2px 6px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.psp-dpad-cross {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dpad-center-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #1b2030, #0c0e18);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 4px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.dpad-up {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px 12px 4px 4px;
+}
+
+.dpad-down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px 4px 12px 12px;
+}
+
+.dpad-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 12px 4px 4px 12px;
+}
+
+.dpad-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px 12px 12px 4px;
+}
+
+/* ========================================================
+   RIGHT ACTION DIAMOND CLUSTER
+======================================================== */
+.psp-action-cluster {
+  pointer-events: auto;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 10px;
+  background: radial-gradient(circle, rgba(22, 26, 38, 0.72) 0%, rgba(12, 14, 22, 0.5) 75%, transparent 100%);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 2px 6px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.psp-action-diamond {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.action-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.action-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.action-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.action-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ========================================================
+   CENTER CLUSTER: SELECT & START PILLS
+======================================================== */
+.psp-center-cluster {
+  pointer-events: auto;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  background: rgba(14, 17, 26, 0.75);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ========================================================
+   BUTTON STYLES & CONSOLE MICRO-ANIMATIONS
+======================================================== */
+.psp-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s ease, filter 0.08s ease, box-shadow 0.08s ease;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Round Action and D-pad buttons */
+.psp-round-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2b3248, #151926);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+  z-index: 5;
+}
+
+.psp-btn-primary {
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.psp-btn-sub {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Pill buttons (SELECT / START) */
+.psp-pill-btn {
+  width: 76px;
+  height: 28px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #242b3d, #141724);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.psp-pill-btn .psp-btn-primary {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.psp-pill-btn .psp-btn-sub {
+  display: none;
+}
+
+/* COLOR THEMES FOR ACTION BUTTONS */
+.psp-btn.green {
+  color: #38ef7d;
+  border-color: rgba(56, 239, 125, 0.35);
+}
+.psp-btn.green.pressed {
+  box-shadow: 0 0 16px rgba(56, 239, 125, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(145deg, #11998e, #38ef7d);
+  color: #0b2219;
+}
+
+.psp-btn.red {
+  color: #ff416c;
+  border-color: rgba(255, 65, 108, 0.35);
+}
+.psp-btn.red.pressed {
+  box-shadow: 0 0 16px rgba(255, 65, 108, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(145deg, #ff4b2b, #ff416c);
+  color: #ffffff;
+}
+
+.psp-btn.blue {
+  color: #00d2ff;
+  border-color: rgba(0, 210, 255, 0.35);
+}
+.psp-btn.blue.pressed {
+  box-shadow: 0 0 16px rgba(0, 210, 255, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(145deg, #0072ff, #00d2ff);
+  color: #0b1a2e;
+}
+
+.psp-btn.yellow {
+  color: #f7b733;
+  border-color: rgba(247, 183, 51, 0.35);
+}
+.psp-btn.yellow.pressed {
+  box-shadow: 0 0 16px rgba(247, 183, 51, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(145deg, #fc4a1a, #f7b733);
+  color: #261605;
+}
+
+.psp-btn.accent {
+  color: #ff9900;
+}
+.psp-btn.accent.pressed {
+  background: #ff9900;
+  color: #000000;
+  box-shadow: 0 0 12px rgba(255, 153, 0, 0.7);
+}
+
+.psp-btn.neutral.pressed {
+  background: #4a5472;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Generic Pressed Micro-animation */
+.psp-btn.pressed {
+  transform: scale(0.92) translateY(2px);
+  filter: brightness(1.2);
+}
+
+/* RESPONSIVE SCALING */
+@media (max-width: 768px) {
+  .psp-touch-layer {
+    padding: 8px 12px;
+  }
+  .psp-dpad-cluster,
+  .psp-action-cluster {
+    width: 145px;
+    height: 145px;
+  }
+  .psp-round-btn {
+    width: 46px;
+    height: 46px;
+  }
+  .dpad-center-hub {
+    width: 36px;
+    height: 36px;
+  }
+  .psp-btn-primary {
+    font-size: 16px;
+  }
+  .psp-btn-sub {
+    font-size: 7px;
+  }
+}
